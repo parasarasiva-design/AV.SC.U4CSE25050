@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iframe Example with Flexbox</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            border: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* FLEX CONTAINER */
+        .container {
+            display: flex;
+            flex-wrap: wrap;        /* allows wrapping */
+            justify-content: space-around; /* center horizontally */
+            gap: 20px;              /* space between items */
+            padding: 20px;
+        }
+
+        /* EACH IFRAME BOX */
+        .box {
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        iframe {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Example of Iframe using Flexbox</h2>
+
+<div class="container">
+
+    <!-- Local Page -->
+    <div class="box">
+        <h3>Local Page</h3>
+        <iframe src="Forms.html" width="300" height="200"></iframe>
+    </div>
+
+    <!-- External Website -->
+    <div class="box">
+        <h3>Wikipedia</h3>
+        <iframe src="https://www.wikipedia.org" width="300" height="200"></iframe>
+    </div>
+
+    <!-- YouTube -->
+    <div class="box">
+        <h3>YouTube Video</h3>
+        <iframe width="300" height="200"
+            src="https://www.youtube.com/embed/tH_AbG1JMOE"
+            title="YouTube video"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="box">
+        <h3>Google Maps</h3>
+        <iframe 
+            src="https://www.google.com/maps?q=Hyderabad&output=embed"
+            width="300" height="200">
+        </iframe>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>College Admission Registration </title>
+    </head>
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+        <h1>College Admission Registration Form</h1>
+        <form>
+            <table style="width: 100%;text-align:center ;">
+                <tr>
+                <td><label for="fname">First name</label></td>
+                <td><input type="text" id="fname" name="fname"></td>
+                <br><br></tr>
+                <tr>
+                <td><label for="lname">last name</label></td>
+                <td><input type="text" id="lname" name="lname"></td>
+                <br><br></tr>
+                <tr>
+                <td><label for="mail">Email 
+                </label></td>
+                <td><input type="text" id="mail" name="mail"></td>
+                <br><br></tr>
+                <tr>
+                <td><label for="Number">Number
+                </label></td>
+                <td><input type="text" id="Number" name="Number"></td>
+                <br><br></tr>
+                <tr><td><label for="Gender">Gender</label></td>
+                <td><input type="radio" id="Male" name="Gender" value="Male">
+                    <label for="Female">Male</label><br>
+                    <input type="radio" id="Female" name="Gender" value="Female">
+                    <label for="other">Female</label><br>
+                    <input type="radio" id="other" name="Gender" value="other">
+                    <label for="other">othres</label>
+                </td></tr>
+                <tr>
+                <td><label for="Department" >Department</label></td>
+                <td><select id="Department" name="Department" value="Department" size="2">
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Chemical Engineering">Chemical Engineering</option>
+                </select>
+                <tr>
+                <td> <label for="hobbies"> Hobbies</label></td>
+                <td> <input type="checkbox" id="hobbies1" name="hobbies1" value="Reading">
+                    <label for="hobbies1"> Reading</label><br>
+                    <input type="checkbox" id="hobbies2" name="hobbies2" value="Traveling">
+                    <label for="hobbies2"> Traveling</label><br>
+                    <input type="checkbox" id="hobbies3" name="hobbies3" value="Sports">
+                    <label for="hobbies3"> Sports</label><br>
+                    <input type="checkbox" id="hobbies4" name="hobbies4" value="Music">
+                    <label for="hobbies4"> Music</label><br>
+                </tr></td>
+                <tr>
+                <td><label for="date of birth day">date of birth day </label></td>
+                    <td><input type="date" id="date of birth day" name="date of birth day">
+                </tr></tr>
+                <tr>
+                    <td><label for="file"> Choose file(s) required documents:</label></td>
+                    <td><input type="file" id="file" name="file" multiple></td>
+                </tr>
+                <tr>
+                    <td><label for =address> Address</label></td>
+                    <td> <textarea id="address" wrap="soft" name="address" rows="5" cols="9"></textarea></td>
+                    </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit">
+                    <input type="reset" value="Reset"></td>
+                </td>
+                <br><br></tr>
+
+
+            </table>
+        </form>
+        </body>
+</html>

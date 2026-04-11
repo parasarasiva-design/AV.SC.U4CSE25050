@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<head> 
+
+    <title>Bouncing Ball Page</title> 
+    <style> 
+         
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background-color: #9b6f00; 
+            font-family: 'Arial', sans-serif; 
+        } 
+ 
+         
+        .stage { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            height: 300px; 
+            justify-content: space-between; 
+        } 
+ 
+        h1 { 
+            color: #00ccff; 
+            margin: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        } 
+ 
+        .ball { 
+            width: 60px; 
+            height: 60px; 
+            background-color: #ae00f8; 
+            border-radius: 50%; 
+            animation: bounce 0.6s ease-in infinite alternate; 
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3); 
+        } 
+ 
+        
+        @keyframes bounce { 
+            from { 
+                transform: translateY(0); 
+            } 
+            to { 
+                transform: translateY(-150px); 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <div class="stage"> 
+        <h1>Bouncing Ball</h1> 
+        <div class="ball"></div> 
+    </div> 
+ 
+</body> 
+</html> 
