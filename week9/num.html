@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Property Checker</title>
+
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: linear-gradient(135deg, #c6af66, #79b9c5);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgb(255, 145, 145);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgb(255, 255, 152);
+            text-align: center;
+            width: 450px;
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .buttons button {
+            padding: 10px 12px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .buttons button:hover {
+            background: #ffd369;
+            transform: scale(1.05);
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .fail {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .info {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2> Number Checker</h2>
+
+    <input type="number" id="numInput" placeholder="Enter number">
+
+    <div class="buttons">
+        <button onclick="checkEvenOdd()">Even / Odd</button>
+        <button onclick="checkPrime()">Prime</button>
+        <button onclick="checkArmstrong()">Armstrong</button>
+        <button onclick="checkFactorial()">Factorial</button>
+    </div>
+
+    <div class="result-box" id="result">
+       Your number is of kind:
+    </div>
+</div>
+
+<script>
+
+// Even / Odd
+function checkEvenOdd() {
+    let n = document.getElementById("numInput").value;
+
+    if (n === "") {
+        alert("Enter number");
+        return;
+    }
+
+    if (n % 2 == 0)
+        document.getElementById("result").innerText = "Even";
+    else
+        document.getElementById("result").innerText = "Odd";
+}
+
+// Prime
+function checkPrime() {
+    let n = document.getElementById("numInput").value;
+
+    if (n === "") {
+        alert("Enter number");
+        return;
+    }
+
+    let prime = true;
+
+    if (n <= 1) prime = false;
+
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime)
+        document.getElementById("result").innerText = "Prime";
+    else
+        document.getElementById("result").innerText = "Not Prime";
+}
+
+// Armstrong
+function checkArmstrong() {
+    let n = document.getElementById("numInput").value;
+
+    if (n === "") {
+        alert("Enter number");
+        return;
+    }
+
+    let sum = 0;
+    let temp = n;
+    let digits = n.length;
+
+    while (temp > 0) {
+        let d = temp % 10;
+        sum += d ** digits;
+        temp = Math.floor(temp / 10);
+    }
+
+    if (sum == n)
+        document.getElementById("result").innerText = "Armstrong";
+    else
+        document.getElementById("result").innerText = "Not Armstrong";
+}
+
+// Factorial
+function checkFactorial() {
+    let n = document.getElementById("numInput").value;
+
+    if (n === "") {
+        alert("Enter number");
+        return;
+    }
+
+    let fact = 1;
+
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    document.getElementById("result").innerText = "Factorial: " + fact;
+}
+
+</script>
+
+</body>
+</html>
