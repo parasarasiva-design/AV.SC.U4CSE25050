@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign of Product</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Find Sign of Product</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number"><br>
+    <input type="number" id="num2" placeholder="Enter second number"><br>
+    <input type="number" id="num3" placeholder="Enter third number"><br>
+
+    <button onclick="checkSign()">Check Sign</button>
+</div>
+
+<script>
+function findSign(a, b, c) {
+    let product = a * b * c;
+
+    if (product > 0) {
+        return "The sign is plus (+)";
+    } 
+    else if (product < 0) {
+        return "The sign is minus (-)";
+    } 
+    else {
+        return "The product is zero (0)";
+    }
+}
+
+function checkSign() {
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+    let c = Number(document.getElementById("num3").value);
+
+    let result = findSign(a, b, c);
+
+    alert(result);
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="one.css">
+</head>
+<body>
+
+<h3>Find Largest of Five Numbers</h3>
+
+<input type="number" id="n1" placeholder="Enter number 1"><br><br>
+<input type="number" id="n2" placeholder="Enter number 2"><br><br>
+<input type="number" id="n3" placeholder="Enter number 3"><br><br>
+<input type="number" id="n4" placeholder="Enter number 4"><br><br>
+<input type="number" id="n5" placeholder="Enter number 5"><br><br>
+
+<button onclick="findLargest()">Find Largest</button>
+
+<script>
+function findLargest() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let c = Number(document.getElementById("n3").value);
+    let d = Number(document.getElementById("n4").value);
+    let e = Number(document.getElementById("n5").value);
+
+    let largest = a; 
+
+    if (b > largest) {
+        largest = b;
+    }
+    if (c > largest) {
+        largest = c;
+    }
+    if (d > largest) {
+        largest = d;
+    }
+    if (e > largest) {
+        largest = e;
+    }
+
+    alert("Largest number is: " + largest);
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+    <link rel="stylesheet" href="one.css">
+</head>
+
+<h3>Odd or Even from 0 to 15</h3>
+
+<button onclick="checkNumbers()">Show Result</button>
+
+<p id="result"></p>
+
+<script>
+function checkNumbers() {
+    let output = "";
+
+    for (let i = 0; i <= 15; i++) {
+        if (i % 2 == 0) {
+            output += i + " is even<br>";
+        } else {
+            output += i + " is odd<br>";
+        }
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" href="one.css">
+</head>
+<h3>Sort Three Numbers</h3>
+
+<input id="n1" type="number" placeholder="Enter first number">
+<input id="n2" type="number" placeholder="Enter second number">
+<input id="n3" type="number" placeholder="Enter third number"><br><br>
+
+<button onclick="sortNumbers()">Sort</button>
+
+<script>
+function sortNumbers() {
+    let a = Number(n1.value);
+    let b = Number(n2.value);
+    let c = Number(n3.value);
+
+    let first, second, third;
+
+    if (a >= b && a >= c) {
+        first = a;
+        if (b >= c) {
+            second = b;
+            third = c;
+        } else {
+            second = c;
+            third = b;
+        }
+    } else if (b >= a && b >= c) {
+        first = b;
+        if (a >= c) {
+            second = a;
+            third = c;
+        } else {
+            second = c;
+            third = a;
+        }
+    } else {
+        first = c;
+        if (a >= b) {
+            second = a;
+            third = b;
+        } else {
+            second = b;
+            third = a;
+        }
+    }
+
+    alert(first + ", " + second + ", " + third);
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" href="one.css">
+</head>
+<h3>Student Grade Calculator</h3>
+
+<input type="number" id="s1" placeholder="Subject 1"><br><br>
+<input type="number" id="s2" placeholder="Subject 2"><br><br>
+<input type="number" id="s3" placeholder="Subject 3"><br><br>
+<input type="number" id="s4" placeholder="Subject 4"><br><br>
+<input type="number" id="s5" placeholder="Subject 5"><br><br>
+<input type="number" id="s6" placeholder="Subject 6"><br><br>
+
+<button onclick="calculateGrade()">Calculate</button>
+
+<script>
+function calculateGrade() {
+    let a = Number(s1.value);
+    let b = Number(s2.value);
+    let c = Number(s3.value);
+    let d = Number(s4.value);
+    let e = Number(s5.value);
+    let f = Number(s6.value);
+
+    let avg = (a + b + c + d + e + f) / 6;
+    let grade;
+
+    if (avg < 60) {
+        grade = "F";
+    } else if (avg < 70) {
+        grade = "D";
+    } else if (avg < 80) {
+        grade = "C";
+    } else if (avg < 90) {
+        grade = "B";
+    } else if (avg < 100) {
+        grade = "A";
+    } else {
+        grade = "Invalid";
+    }
+
+    alert("Average: " + avg + "\nGrade: " + grade);
+}
+</script>
+
+</body>
+</html>
