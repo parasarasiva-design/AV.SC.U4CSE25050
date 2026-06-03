@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        #bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        #fill {
+            height: 100%;
+            width: 0%;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Password Checker</h2>
+
+    <input type="password" id="password" placeholder="Enter password" oninput="checkStrength()">
+
+    <p id="message"></p>
+
+    <div id="bar">
+        <div id="fill"></div>
+    </div>
+</div>
+
+<script>
+function checkStrength() {
+    let pass = document.getElementById("password").value;
+    let msg = document.getElementById("message");
+    let fill = document.getElementById("fill");
+
+    let strength = 0;
+
+    if (pass.length >= 8) strength++;
+    if (/[A-Z]/.test(pass)) strength++;
+    if (/[a-z]/.test(pass)) strength++;
+    if (/[0-9]/.test(pass)) strength++;
+    if (/[@$!%*?&]/.test(pass)) strength++;
+
+    if (pass.length === 0) {
+        msg.textContent = "";
+        fill.style.width = "0%";
+    }
+    else if (strength <= 2) {
+        msg.textContent = "Weak Password";
+        msg.style.color = "red";
+        fill.style.width = "33%";
+        fill.style.background = "red";
+    }
+    else if (strength <= 4) {
+        msg.textContent = "Medium Password";
+        msg.style.color = "orange";
+        fill.style.width = "66%";
+        fill.style.background = "orange";
+    }
+    else {
+        msg.textContent = "Strong Password";
+        msg.style.color = "green";
+        fill.style.width = "100%";
+        fill.style.background = "green";
+    }
+}
+</script>
+
+</body>
+</html>
+

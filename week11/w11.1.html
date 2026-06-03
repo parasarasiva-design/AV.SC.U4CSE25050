@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+    <title>password checking</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: burlywood;
+            padding: 20px;
+        }
+        .container {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 height: 100vh;
+                     }
+        input{
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var message = "";
+            if (password.length < 8) {
+                message += "Password must be at least 8 characters long.\n";
+            }
+            if (!/[A-Z]/.test(password)) {
+                message += "Password must contain at least one uppercase letter.\n";
+            }
+            if (!/[a-z]/.test(password)) {
+                message += "Password must contain at least one lowercase letter.\n";
+            }
+            if (!/[0-9]/.test(password)) {
+                message += "Password must contain at least one digit.\n";
+            }
+            if (!/[@$!%*?&]/.test(password)) {
+                message += "Password must contain at least one special character (@, $, !, %, *, ?, &).\n";
+            }
+            if (message === "") {
+                alert("Password is strong!");
+            } else {
+                alert(message);
+            }
+        }
+    </script>
+</head>
+<body></body>
+    <div class="container">
+        <div>
+            <h2>Password Strength Checker</h2>
+            <input type="text" id="password" placeholder="Enter your password">
+            <button onclick="checkPassword()">Check Password</button>
+        </div>
+    </div>
+</html>

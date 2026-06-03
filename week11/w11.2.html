@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Email Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+        }
+
+
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+
+        }
+
+
+
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Register</h2>
+
+    <form onsubmit="return validateEmail()">
+        <input type="text" id="email" placeholder="Enter your email" oninput="validateEmail()">
+        <button type="submit">Submit</button>
+        <p id="message"></p>
+    </form>
+</div>
+
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message");
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (email.length === 0) {
+        message.textContent = "Email cannot be empty";
+        message.className = "error";
+        return false;
+    }
+
+    if (!pattern.test(email)) {
+        message.textContent = "Invalid email format";
+        message.className = "error";
+        return false;
+    }
+
+    message.textContent = "Valid email ";
+    message.className = "success";
+
+    return false; // keep false for demo (remove later if needed)
+}
+</script>
+
+</body>
+</html>
+

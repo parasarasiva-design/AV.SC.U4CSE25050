@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Mobile Validation</h2>
+
+    <input type="text" id="mobile" placeholder="Enter mobile number" onblur="validateMobile()">
+
+    <p id="message"></p>
+</div>
+
+<script>
+function validateMobile() {
+    let mobile = document.getElementById("mobile").value;
+    let message = document.getElementById("message");
+    let pattern = /^[0-9]{10}$/;
+
+    if (mobile.length === 0) {
+        message.textContent = "Mobile number cannot be empty";
+        message.className = "error";
+    }
+    else if (!pattern.test(mobile)) {
+        message.textContent = "Enter exactly 10 digits";
+        message.className = "error";
+    }
+    else {
+        message.textContent = "Valid mobile number ";
+        message.className = "success";
+    }
+}
+</script>
+
+</body>
+</html>
+
